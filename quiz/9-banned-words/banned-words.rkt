@@ -2,9 +2,9 @@
 ;; https://github.com/codenameyau/racket-quiz
 ;; 
 ;; Description:
-;;   Typically a Bayes-Filter is used to probabilistic
-;;   detect spam emails. Make a simple spam detector based 
-;;   on whether a word is in a list of banned words.
+;;   Typically a probabilistic Bayes-Filter is used to detect
+;;   spam emails. Make a simple spam detector based on whether 
+;;   a word is in a list of banned words.
 ;;
 #lang racket
 
@@ -23,10 +23,12 @@
     "nigeria"
     ))
 
+;; (list string) -> boolean
 (define (list-contains data item)
   (if (empty? data) #f
       (or (if (equal? (car data) item) #t
               (list-contains (cdr data) item)))))
 
+;; (string) -> boolean
 (define (check-banned word)
-  (list-contains ban-list word))
+  (list-contains ban-list (string-downcase word)))
