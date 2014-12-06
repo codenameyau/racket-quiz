@@ -4,6 +4,9 @@
 (require rackunit
          "banned-words.rkt")
 
+;; Test Case: base case
+(check-equal? (check-banned "") #f "Empty should not be banned")
+
 ;; Test Case: basic words
 (check-equal? (check-banned "savings") #t "Should be banned")
 (check-equal? (check-banned "school") #f "Should not be banned")

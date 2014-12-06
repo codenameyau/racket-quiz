@@ -23,16 +23,28 @@
     "nigeria"
     ))
 
+
 ;; (list string) -> boolean
 (define (list-contains data item)
   (if (empty? data) #f
       (or (if (equal? (car data) item) #t
               (list-contains (cdr data) item)))))
 
-;; (string) -> boolean
-(define (word-banned? word)
-  (list-contains ban-list (string-downcase word)))
 
 ;; (string) -> boolean
-(define (check-banned sentence)
-  (for ([i (in-string sentence)])))
+(define (banned-word? word)
+  (list-contains ban-list (string-downcase word)))
+
+
+;; (list) -> boolean
+(define (banned-words? words)
+  (if (empty? words) #f
+      (or (banned-word? (car words))
+          (banned-words? (cdr words)))))
+
+
+;; (string) -> boolean
+(define (check-banned sentence) 
+  (banned-words? (regexp-match* #px"\\w+" sentence)))
+
+
