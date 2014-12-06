@@ -12,7 +12,8 @@
 ;; Module Exports ;;
 ;;;;;;;;;;;;;;;;;;;;
 (provide check-banned
-         list-contains)
+         list-contains
+         ban-list)
 
 ;;;;;;;;;;;;;;;;;
 ;; Definitions ;;

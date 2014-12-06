@@ -22,3 +22,10 @@
 ;; Test Case: punctuation
 (check-equal? (check-banned "great-savings") #t "Punctuations should be ignored")
 (check-equal? (check-banned "great savings!") #t "Punctuations should be ignored")
+
+
+;; Test Case: list contains
+(define test-list '("cat" "dog" "bird"))
+(check-equal? (list-contains '() "") #f "Empty list should return false")
+(check-equal? (list-contains test-list "cat") #t "List should contain cat")
+(check-equal? (list-contains test-list "mouse") #f "List should not contain mouse")
