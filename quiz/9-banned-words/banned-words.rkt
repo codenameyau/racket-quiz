@@ -30,5 +30,9 @@
               (list-contains (cdr data) item)))))
 
 ;; (string) -> boolean
-(define (check-banned word)
+(define (word-banned? word)
   (list-contains ban-list (string-downcase word)))
+
+;; (string) -> boolean
+(define (check-banned sentence)
+  (for ([i (in-string sentence)])))
