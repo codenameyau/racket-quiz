@@ -47,5 +47,3 @@
 ;; (string) -> boolean
 (define (check-banned sentence) 
   (banned-words? (regexp-match* #px"\\w+" sentence)))
-
-

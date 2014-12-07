@@ -23,8 +23,8 @@
 
 ;; (list int int) -> list
 (define (quicksort array)
-  (if (empty? array) array
+  (if (null? array) array
       (let ([p (pivot array)])
         (append (quicksort (filter (lambda (x) (< x p)) array))
-                (list p)
+                (filter (lambda (x) (= x p)) array)
                 (quicksort (filter (lambda (x) (> x p)) array))))))
