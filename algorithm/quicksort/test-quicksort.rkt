@@ -1,4 +1,4 @@
-;; [Test] Quick sort
+;; [Test] Racket Quiz - Quick sort
 ;; https://github.com/codenameyau/racket-quiz
 #lang racket
 
@@ -11,5 +11,5 @@
 (check-equal? (quicksort sample-list-a) sorted-list-a "Basic sorting")
 
 ;; Test Case: shuffled array
-(define sample-list-b (shuffle (range 20)))
-(define sorted-list-b (quicksort sample-list-b))
+(define sample-size 200)
+(check-equal? (range sample-size) (quicksort (shuffle (range sample-size))))
