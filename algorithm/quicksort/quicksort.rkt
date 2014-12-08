@@ -2,7 +2,7 @@
 ;; https://github.com/codenameyau/racket-quiz
 ;; 
 ;; Description:
-;;   Implement quicksort for lists
+;;   Contains implementation of quicksort for lists.
 ;;
 #lang racket
 
@@ -17,14 +17,14 @@
 ;;;;;;;;;;;;;;;;;
 
 ;; (list) -> int
-(define (pivot array)
+(define (get-pivot array)
   (list-ref array (random (length array))))
 
 
-;; (list int int) -> list
+;; (list) -> list
 (define (quicksort array)
   (if (null? array) array
-      (let ([p (pivot array)])
+      (let ([p (get-pivot array)])
         (append (quicksort (filter (lambda (x) (< x p)) array))
                 (filter (lambda (x) (= x p)) array)
                 (quicksort (filter (lambda (x) (> x p)) array))))))
