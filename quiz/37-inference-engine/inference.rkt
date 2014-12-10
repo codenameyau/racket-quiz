@@ -2,16 +2,17 @@
 ;; https://github.com/codenameyau/racket-quiz
 ;;
 ;; Description:
-;;   Create an inference engine that is capable of
-;;   answering questions based on provided truths.
+;;   Create an truth maintenance system (TMS) for an 
+;;   inference engine that is capable of answering 
+;;   questions based on provided truths.
 ;;
-;; Teach engine the following truths:
+;; Teach the engine the following truths:
 ;;   - All PLURAL-NOUN are PLURAL-NOUN.
 ;;   - No PLURAL-NOUN are PLURAL-NOUN.
 ;;   - Some PLURAL-NOUN are PLURAL-NOUN.
 ;;   - Some PLURAL-NOUN are not PLURAL-NOUN.
 ;;
-;; Query engine to answer questions:
+;; Query the engine to answer questions:
 ;;   - Are all PLURAL-NOUN PLURAL-NOUN?
 ;;   - Are no PLURAL-NOUN PLURAL-NOUN?
 ;;   - Are any PLURAL-NOUN PLURAL-NOUN?
@@ -23,8 +24,9 @@
 ;;;;;;;;;;;;;;;;;;;;
 ;; Module Exports ;;
 ;;;;;;;;;;;;;;;;;;;;
-
+(provide engine-knowledge)
 
 ;;;;;;;;;;;;;;;;;
 ;; Definitions ;;
 ;;;;;;;;;;;;;;;;;
+(define engine-knowledge 1)
