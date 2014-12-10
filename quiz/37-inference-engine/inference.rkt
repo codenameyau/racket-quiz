@@ -1,6 +1,10 @@
 ;; Ruby Quiz 37 - Inference Engine
 ;; https://github.com/codenameyau/racket-quiz
 ;;
+;; Package Requirements:
+;; http://stchang.github.io/graph/graph.html
+;; - raco pkg install graph
+;;
 ;; Description:
 ;;   Create an truth maintenance system (TMS) for an 
 ;;   inference engine that is capable of answering 
@@ -20,13 +24,17 @@
 ;;   - Describe PLURAL-NOUN.
 ;;
 #lang racket
+(require graph)
 
 ;;;;;;;;;;;;;;;;;;;;
 ;; Module Exports ;;
 ;;;;;;;;;;;;;;;;;;;;
-(provide engine-knowledge)
+(provide knowledge-engine)
+(define knowledge-engine 1)
 
 ;;;;;;;;;;;;;;;;;
 ;; Definitions ;;
 ;;;;;;;;;;;;;;;;;
-(define engine-knowledge 1)
+(define knowledge (directed-graph '((a b) (b c))))
+(graph? knowledge)
+
